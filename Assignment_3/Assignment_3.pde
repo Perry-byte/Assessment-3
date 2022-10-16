@@ -58,9 +58,11 @@ void setup() {
   cp5.getController("setOuterRadius").getCaptionLabel().align(ControlP5.LEFT, ControlP5.TOP_OUTSIDE).setPaddingY(5).setColor(#000000);
   fill(0,255,0,200);
   circle(820,750,100);
-  fill(0,255,0,255);
-  textSize(45);
-  text("Go",820,750);
+  fill(21,71,52);
+  textSize(22);
+  text("Confirm",775,750);
+  textSize(22);
+  text("Design",780,773);
 }
 
 void setLimbs(int limbs)
