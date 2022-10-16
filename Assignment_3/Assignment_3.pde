@@ -4,11 +4,21 @@ ControlP5 cp5;
 int limbs;
 float innerRadius;
 float outerRadius;
+Biscuit[] biscuits;
+int doughCount;
+int fillingCount;
+int designCount;
 
 void setup() {
+  //println("zero");
   background(255);
   //presets
   size(1000,900);
+  biscuits = new Biscuit[16];
+  for (int i = 0; i < biscuits.length; i++) {
+    biscuits[i] = new Biscuit();
+  }
+  doughCount = 0;
   background(255,0,60);
   rectMode(CENTER);
   rect(500,450,900,900);
@@ -21,8 +31,10 @@ void setup() {
   text("Dough",100,300);
   fill(145,100,0,90);
   circle(170,400,100.0);
+  
   fill(145,100,0,200);
   circle(170,525,100.0);
+  
   fill(78,53,36,255);
   circle(170,650,100.0);
   fill(78,53,36,255);
@@ -80,6 +92,29 @@ void setOuterRadius(int outerRadius)
   this.outerRadius = outerRadius;
 }
 
-void mousePressed() {
-  
+void draw() {
+
+}
+
+void mouseClicked() {
+  println("zero");
+  if (mouseOverCircle(170,400,100)) {
+    biscuits[doughCount].dough = color(170,400,100);
+    doughCount++;
+    println(doughCount);
+  }
+  if (mouseOverCircle(170,525,100)) {
+    biscuits[doughCount].dough = color(170,525,100);
+    doughCount++;
+    println(doughCount);
+  }
+  if (mouseOverCircle(170,650,100)) {
+    biscuits[doughCount].dough = color(170,650,100);
+    doughCount++;
+    println(doughCount);
+  }
+}
+
+boolean mouseOverCircle(int x, int y, float diameter) {
+  return (dist(mouseX, mouseY, x, y) < diameter*0.5);
 }
