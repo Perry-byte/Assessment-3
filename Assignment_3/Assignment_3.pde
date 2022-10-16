@@ -147,7 +147,7 @@ void mouseClicked() {
       println(fillingCount);
     }
     if (mouseOverCircle(500,795,75)) {
-      uits[fillingCount].filling = color(random(255),random(255),random(255));
+      biscuits[fillingCount].filling = color(random(255),random(255),random(255));
       fillingCount++;
       println(fillingCount);
     }
@@ -174,7 +174,15 @@ void keyPressed() {
   int rows = 4;
   int cols = 4;
   translate(215,115);
-  
+  float outerRadius = 750.0/cols;
+   for (int i=0; i<rows; i++) {
+     for (int j=0; j<cols; j++) {
+       pushMatrix();
+       translate(outerRadius*j, outerRadius*i);
+       biscuits[i * 4 + j].show();
+       popMatrix();
+     }
+   }
 }
 
 boolean mouseOverCircle(int x, int y, float diameter) {
