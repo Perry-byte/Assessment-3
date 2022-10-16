@@ -148,6 +148,15 @@ void mouseClicked() {
     fillingCount++;
     println(fillingCount);
   }
+  if (mouseOverCircle(820,750,100)) {
+    biscuits[designCount].limbs = limbs;
+    biscuits[designCount].innerRadius = innerRadius;
+    biscuits[designCount].outerRadius = outerRadius;
+    designCount++;
+    println(limbs);
+    println(innerRadius);
+    println(outerRadius);
+  }
 }
 
 boolean mouseOverCircle(int x, int y, float diameter) {
