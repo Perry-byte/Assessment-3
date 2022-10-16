@@ -1,3 +1,10 @@
+import controlP5.*;
+
+ControlP5 cp5;
+int limbs;
+float innerRadius;
+float outerRadius;
+
 void setup() {
   background(255);
   //presets
@@ -42,6 +49,28 @@ void setup() {
   text("Random",460,860);
   textSize(45);
   text("Design",750,300);
+  cp5 = new ControlP5(this);
+  cp5.addSlider("setLimbs").setRange(3,25).setValue(limbs).setPosition(720,400).setSize(200, 30).setCaptionLabel("Number of Limbs").setSliderMode(Slider.FLEXIBLE).setTriggerEvent(Slider.RELEASED);
+  cp5.getController("setLimbs").getCaptionLabel().align(ControlP5.LEFT, ControlP5.TOP_OUTSIDE).setPaddingY(5).setColor(#000000);
+  cp5.addSlider("setInnerRadius").setRange(3,70).setValue(innerRadius).setPosition(720,500).setSize(200, 30).setCaptionLabel("Inner Radius").setSliderMode(Slider.FLEXIBLE).setTriggerEvent(Slider.RELEASED);
+  cp5.getController("setInnerRadius").getCaptionLabel().align(ControlP5.LEFT, ControlP5.TOP_OUTSIDE).setPaddingY(5).setColor(#000000);
+  cp5.addSlider("setOuterRadius").setRange(3,70).setValue(outerRadius).setPosition(720,600).setSize(200, 30).setCaptionLabel("Outer Radius").setSliderMode(Slider.FLEXIBLE).setTriggerEvent(Slider.RELEASED);
+  cp5.getController("setOuterRadius").getCaptionLabel().align(ControlP5.LEFT, ControlP5.TOP_OUTSIDE).setPaddingY(5).setColor(#000000);
+}
+
+void setLimbs(int limbs)
+{
+  this.limbs = limbs;
+}
+
+void setInnerRadius(int innerRadius)
+{
+  this.innerRadius = innerRadius;
+}
+
+void setOuterRadius(int outerRadius)
+{
+  this.outerRadius = outerRadius;
 }
 
 void show() {
