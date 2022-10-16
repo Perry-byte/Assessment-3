@@ -101,7 +101,7 @@ void draw() {
 
 }
 
-void mouseClicked() {
+void mousePressed() {
   println("zero");
   if (doughCount < 16) {
     if (mouseOverCircle(170,400,100)) {
