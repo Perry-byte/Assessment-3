@@ -1,4 +1,37 @@
 void setup() {
+  background(255);
+  //presets
+  size(1000,900);
+  background(255,0,60);
+  rectMode(CENTER);
+  rect(500,450,900,900);
+  fill(0);
+  textSize(75);
+  text("Biscuit Simulator",200,80);
+  textSize(45);
+  text("Choose the dough, filling and design",100,180);
+  textSize(45);
+  text("Dough",100,300);
+  fill(145,100,0,90);
+  circle(170,400,100.0);
+  fill(145,100,0,200);
+  circle(170,525,100.0);
+  fill(78,53,36,255);
+  circle(170,650,100.0);
+  fill(78,53,36,255);
+  circle(170,650,100.0);
+  fill(255);
+  circle(170,775,100.0);
+  fill(0);
+  textSize(15);
+  text("Random",140,780);
+  textSize(45);
+  text("Filling",430,300);
+  textSize(45);
+  text("Design",750,300);
+}
+
+void show() {
  background(255);
  //presets
  int rows = 4;
@@ -7,7 +40,7 @@ void setup() {
  background(255,0,60);
  rectMode(CENTER);
  rect(500,400,900,800);
- translate(225,100);
+ translate(215,115);
  float outerRadius = 750.0/cols;
  for (int i=0; i<rows; i++) {
    for (int j=0; j<cols; j++) {
