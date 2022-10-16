@@ -3,7 +3,7 @@ class Biscuit {
   color filling;
   int limbs;
   float innerRadius;
-  float outerRadius;
+  float outerRadii;
   
   void show() {
    background(255);
@@ -21,9 +21,9 @@ class Biscuit {
        pushMatrix();
        translate(outerRadius*j, outerRadius*i);
        stroke(145,100,0,90);
-       fill(145,100,0,90);
+       fill(dough);
        circle(0,0,150);
-       quadraticForm(int(random(3, 25)), int(random(3, 70)), int(random(3, 70)));
+       quadraticForm(limbs, innerRadius, outerRadii);
        //polygon(4,60);
        popMatrix();
       }
@@ -61,7 +61,7 @@ class Biscuit {
    quadraticVertex(cx, cy, ax, ay);
    }
    }
-   fill(random(0,255),random(0,255),random(0,255));
+   fill(filling);
    endShape();
   } // end quadraticForm
   
