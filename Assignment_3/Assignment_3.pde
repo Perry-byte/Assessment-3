@@ -23,10 +23,23 @@ void setup() {
   fill(255);
   circle(170,775,100.0);
   fill(0);
-  textSize(15);
-  text("Random",140,780);
+  textSize(20);
+  text("Random",130,780);
   textSize(45);
   text("Filling",430,300);
+  fill(166,10,61);
+  circle(500,375,75);
+  fill(224,112,124);
+  circle(500,480,75);
+  fill(130,163,255);
+  circle(500,585,75);
+  fill(237,139,0);
+  circle(500,690,75);
+  fill(255);
+  circle(500,795,75);
+  fill(0);
+  textSize(20);
+  text("Random",460,860);
   textSize(45);
   text("Design",750,300);
 }
