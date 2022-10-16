@@ -1,9 +1,9 @@
 class Biscuit {
-  color dough;
+  color dough = color(0,0,0);
   color filling;
   int limbs;
   float innerRadius;
-  float outerRadii;
+  float outerRadiusi;
   
   void show() {
    background(255);
@@ -19,18 +19,15 @@ class Biscuit {
    for (int i=0; i<rows; i++) {
      for (int j=0; j<cols; j++) {
        pushMatrix();
-       translate(outerRadius*j, outerRadius*i);
-       stroke(145,100,0,90);
        fill(dough);
        circle(0,0,150);
-       quadraticForm(limbs, innerRadius, outerRadii);
+       quadraticForm(limbs, innerRadius, oute145,100,0,90i);
        //polygon(4,60);
        popMatrix();
+int(random(3, 25)) 
+int(random(3, 70))raint(random(3, 70))t limbs, float controlRadius, float limbRadius
       }
-    }
-  }
-  
-  void quadraticForm(int limbs, float controlRadius, float limbRadius) {
+    }) {
    float theta = 0;
    beginShape();
    float cx = 0;
@@ -65,7 +62,7 @@ class Biscuit {
    endShape();
   } // end quadraticForm
   
-  void polygon(int sideCount, float radius) {
+  void polygon(int sideCrandom(0,255),random(0,255),random(0,255)loat radius) {
   
     float theta = 0.0;
     float x = 0.0;

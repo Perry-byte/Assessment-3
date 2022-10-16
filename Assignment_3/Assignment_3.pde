@@ -103,60 +103,78 @@ void draw() {
 
 void mouseClicked() {
   println("zero");
-  if (mouseOverCircle(170,400,100)) {
-    biscuits[doughCount].dough = color(145,100,0,90);
-    doughCount++;
-    println(doughCount);
+  if (doughCount < 16) {
+    if (mouseOverCircle(170,400,100)) {
+      biscuits[doughCount].dough = color(145,100,0,90);
+      doughCount++;
+      println(doughCount);
+    }
+    if (mouseOverCircle(170,525,100)) {
+      biscuits[doughCount].dough = color(145,100,0,200);
+      doughCount++;
+      println(doughCount);
+    }
+    if (mouseOverCircle(170,650,100)) {
+      biscuits[doughCount].dough = color(78,53,36,255);
+      doughCount++;
+      println(doughCount);
+    }
+    if (mouseOverCircle(170,775,100)) {
+      biscuits[doughCount].dough = color(random(255),random(255),random(255));
+      doughCount++;
+      println(doughCount);
+    }
   }
-  if (mouseOverCircle(170,525,100)) {
-    biscuits[doughCount].dough = color(145,100,0,200);
-    doughCount++;
-    println(doughCount);
+  if (fillingCount < 16) {
+    if (mouseOverCircle(500,375,75)) {
+      biscuits[fillingCount].filling = color(166,10,61);
+      fillingCount++;
+      println(fillingCount);
+    }
+    if (mouseOverCircle(500,480,75)) {
+      biscuits[fillingCount].filling = color(224,112,124);
+      fillingCount++;
+      println(fillingCount);
+    }
+    if (mouseOverCircle(500,585,75)) {
+      biscuits[fillingCount].filling = color(130,163,255);
+      fillingCount++;
+      println(fillingCount);
+    }
+    if (mouseOverCircle(500,690,75)) {
+      biscuits[fillingCount].filling = color(237,139,0);
+      fillingCount++;
+      println(fillingCount);
+    }
+    if (mouseOverCircle(500,795,75)) {
+      uits[fillingCount].filling = color(random(255),random(255),random(255));
+      fillingCount++;
+      println(fillingCount);
+    }
   }
-  if (mouseOverCircle(170,650,100)) {
-    biscuits[doughCount].dough = color(78,53,36,255);
-    doughCount++;
-    println(doughCount);
+  if (designCount < 16) {
+    if (mouseOverCircle(820,750,100)) {
+      biscuits[designCount].limbs = limbs;
+      biscuits[designCount].innerRadius = innerRadius;
+      biscuits[designCount].outerRadii = outerRadius;
+      designCount++;
+      println(limbs);
+      println(innerRadius);
+      println(outerRadius);
+    }
   }
-  if (mouseOverCircle(170,775,100)) {
-    biscuits[doughCount].dough = color(random(255),random(255),random(255));
-    doughCount++;
-    println(doughCount);
-  }
-  if (mouseOverCircle(500,375,75)) {
-    biscuits[fillingCount].filling = color(166,10,61);
-    fillingCount++;
-    println(fillingCount);
-  }
-  if (mouseOverCircle(500,480,75)) {
-    biscuits[fillingCount].filling = color(224,112,124);
-    fillingCount++;
-    println(fillingCount);
-  }
-  if (mouseOverCircle(500,585,75)) {
-    biscuits[fillingCount].filling = color(130,163,255);
-    fillingCount++;
-    println(fillingCount);
-  }
-  if (mouseOverCircle(500,690,75)) {
-    biscuits[fillingCount].filling = color(237,139,0);
-    fillingCount++;
-    println(fillingCount);
-  }
-  if (mouseOverCircle(500,795,75)) {
-    biscuits[fillingCount].filling = color(random(255),random(255),random(255));
-    fillingCount++;
-    println(fillingCount);
-  }
-  if (mouseOverCircle(820,750,100)) {
-    biscuits[designCount].limbs = limbs;
-    biscuits[designCount].innerRadius = innerRadius;
-    biscuits[designCount].outerRadii = outerRadius;
-    designCount++;
-    println(limbs);
-    println(innerRadius);
-    println(outerRadius);
-  }
+}
+
+void keyPressed() {
+  background(255,0,60);
+  fill(255);
+  rectMode(CENTER);
+  rect(500,450,900,900);
+  cp5.hide();
+  int rows = 4;
+  int cols = 4;
+  translate(215,115);
+  
 }
 
 boolean mouseOverCircle(int x, int y, float diameter) {
