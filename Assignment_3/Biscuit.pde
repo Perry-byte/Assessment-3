@@ -1,17 +1,20 @@
 class Biscuit {
+  // Biscuit variables
   color dough;
   color filling;
   int limbs;
   float innerRadius;
   float outerRadii;
   
+  // Method that draws the Biscuit based on its variables
   void show() {
      stroke(dough);
      fill(dough);
      circle(0,0,150);
      quadraticForm(limbs, innerRadius, outerRadii);
   }
-  
+
+// Method that draws the Biscuit design based on its variables
 void quadraticForm(int limbs, float controlRadius, float limbRadius) {
    float theta = 0;
    beginShape();
@@ -45,5 +48,5 @@ void quadraticForm(int limbs, float controlRadius, float limbRadius) {
    }
    fill(filling);
    endShape();
-  } // end quadraticForm
+  }
 }
