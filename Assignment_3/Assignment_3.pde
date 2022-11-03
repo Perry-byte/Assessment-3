@@ -1,5 +1,7 @@
+// Import the library for GUI sliders
 import controlP5.*;
 
+// Declare the GUI, user inputs, array of Biscuit objects and the number of current user inputs
 ControlP5 cp5;
 int limbs;
 float innerRadius;
@@ -10,9 +12,8 @@ int fillingCount;
 int designCount;
 
 void setup() {
-  //println("zero");
+  // Draw the start screen and initialise the array of Biscuit objects and the number of Biscuit objects
   background(255);
-  //presets
   size(1000,900);
   biscuits = new Biscuit[16];
   for (int i = 0; i < biscuits.length; i++) {
@@ -22,13 +23,19 @@ void setup() {
   background(255,0,60);
   rectMode(CENTER);
   rect(500,450,900,900);
+  
+  // Write the heading and sub-heading of the start screen
   fill(0);
   textSize(75);
   text("Biscuit Simulator",200,80);
+  
   textSize(45);
   text("Choose the dough, filling and design",100,180);
+  
+  // Draw the Dough sub-heading and the buttons that decide the colour of the biscuits' dough
   textSize(45);
   text("Dough",100,300);
+  
   fill(145,100,0,90);
   circle(170,400,100.0);
   
@@ -44,8 +51,11 @@ void setup() {
   fill(0);
   textSize(20);
   text("Random",130,780);
+  
+  // Draw the Filling sub-heading and the buttons that decide the colour of the biscuits' filling
   textSize(45);
   text("Filling",430,300);
+  
   fill(166,10,61);
   circle(500,375,75);
   
@@ -64,15 +74,23 @@ void setup() {
   fill(0);
   textSize(20);
   text("Random",460,860);
+  
+  // Draw the Design sub-heading and the sliders that decide the shape of the biscuits' design
   textSize(45);
   text("Design",750,300);
+  
   cp5 = new ControlP5(this);
+  
   cp5.addSlider("setLimbs").setRange(3,25).setValue(limbs).setPosition(720,400).setSize(200, 30).setCaptionLabel("Number of Limbs").setSliderMode(Slider.FLEXIBLE).setTriggerEvent(Slider.RELEASED);
   cp5.getController("setLimbs").getCaptionLabel().align(ControlP5.LEFT, ControlP5.TOP_OUTSIDE).setPaddingY(5).setColor(#000000);
+  
   cp5.addSlider("setInnerRadius").setRange(3,70).setValue(innerRadius).setPosition(720,500).setSize(200, 30).setCaptionLabel("Inner Radius").setSliderMode(Slider.FLEXIBLE).setTriggerEvent(Slider.RELEASED);
   cp5.getController("setInnerRadius").getCaptionLabel().align(ControlP5.LEFT, ControlP5.TOP_OUTSIDE).setPaddingY(5).setColor(#000000);
+  
   cp5.addSlider("setOuterRadius").setRange(3,70).setValue(outerRadius).setPosition(720,600).setSize(200, 30).setCaptionLabel("Outer Radius").setSliderMode(Slider.FLEXIBLE).setTriggerEvent(Slider.RELEASED);
   cp5.getController("setOuterRadius").getCaptionLabel().align(ControlP5.LEFT, ControlP5.TOP_OUTSIDE).setPaddingY(5).setColor(#000000);
+  
+  // Draws the Confirm Design button that assigns the current design parameters to the next Biscuit object
   fill(0,255,0,200);
   circle(820,750,100);
   fill(21,71,52);
