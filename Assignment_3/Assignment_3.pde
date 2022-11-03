@@ -100,6 +100,7 @@ void setup() {
   text("Design",780,773);
 }
 
+// Assigns the current slider value to its corresponding variable
 void setLimbs(int limbs)
 {
   this.limbs = limbs;
@@ -119,8 +120,11 @@ void draw() {
 
 }
 
+// When the mouse is clicked, the chosen colour or design is assigned to the next available Biscuit object (this function sops when all Biscuits have been assigned each value)
 void mousePressed() {
-  println("zero");
+  println(doughCount + 1);
+  println(fillingCount + 1);
+  println(designCount + 1);
   if (doughCount < 16) {
     if (mouseOverCircle(170,400,100)) {
       biscuits[doughCount].dough = color(145,100,0,90);
@@ -143,6 +147,7 @@ void mousePressed() {
       println(doughCount);
     }
   }
+  
   if (fillingCount < 16) {
     if (mouseOverCircle(500,375,75)) {
       biscuits[fillingCount].filling = color(166,10,61);
@@ -170,6 +175,7 @@ void mousePressed() {
       println(fillingCount);
     }
   }
+  
   if (designCount < 16) {
     if (mouseOverCircle(820,750,100)) {
       biscuits[designCount].limbs = limbs;
@@ -183,6 +189,7 @@ void mousePressed() {
   }
 }
 
+// When a key is pressed, it redraws the background with the completed array of Biscuit objects shown on the screen
 void keyPressed() {
   background(255,0,60);
   fill(255);
@@ -203,6 +210,7 @@ void keyPressed() {
    }
 }
 
+// Method that detects when a button is pressed
 boolean mouseOverCircle(int x, int y, float diameter) {
   return (dist(mouseX, mouseY, x, y) < diameter*0.5);
 }
