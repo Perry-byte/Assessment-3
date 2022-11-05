@@ -10,11 +10,18 @@ Biscuit[] biscuits;
 int doughCount;
 int fillingCount;
 int designCount;
+PFont fancyFont;
+PFont normalFont;
+PFont boldFont;
 
 void setup() {
   // Draw the start screen and initialise the array of Biscuit objects and the number of Biscuit objects
   background(255);
   size(1000,900);
+  fancyFont = createFont("Menuetto.ttf", 128);
+  normalFont = createFont("calibril.ttf", 25);
+  boldFont = createFont("calibrib.ttf", 25);
+  textFont(fancyFont);
   biscuits = new Biscuit[16];
   for (int i = 0; i < biscuits.length; i++) {
     biscuits[i] = new Biscuit();
@@ -26,15 +33,15 @@ void setup() {
   
   // Write the heading and sub-heading of the start screen
   fill(0);
-  textSize(75);
-  text("Biscuit Simulator",200,80);
+  textSize(95);
+  text("Biscuit Simulator",250,90);
   
-  textSize(45);
-  text("Choose the dough, filling and design",100,180);
+  textSize(65);
+  text("Choose the dough, filling and design",120,180);
   
   // Draw the Dough sub-heading and the buttons that decide the colour of the biscuits' dough
-  textSize(45);
-  text("Dough",100,300);
+  textSize(55);
+  text("Dough",115,300);
   
   fill(145,100,0,90);
   circle(170,400,100.0);
@@ -49,12 +56,14 @@ void setup() {
   circle(170,775,100.0);
   
   fill(0);
-  textSize(20);
+  textFont(normalFont);
+  textSize(25);
   text("Random",130,780);
   
   // Draw the Filling sub-heading and the buttons that decide the colour of the biscuits' filling
-  textSize(45);
-  text("Filling",430,300);
+  textFont(fancyFont);
+  textSize(55);
+  text("Filling",450,300);
   
   fill(166,10,61);
   circle(500,375,75);
@@ -72,11 +81,13 @@ void setup() {
   circle(500,795,75);
   
   fill(0);
+  textFont(normalFont);
   textSize(20);
-  text("Random",460,860);
+  text("Random",467,800);
   
   // Draw the Design sub-heading and the sliders that decide the shape of the biscuits' design
-  textSize(45);
+  textFont(fancyFont);
+  textSize(55);
   text("Design",750,300);
   
   cp5 = new ControlP5(this);
@@ -94,10 +105,12 @@ void setup() {
   fill(0,255,0,200);
   circle(820,750,100);
   fill(21,71,52);
-  textSize(22);
-  text("Confirm",775,750);
-  textSize(22);
-  text("Design",780,773);
+  textFont(boldFont);
+  textSize(20);
+  text("Confirm",787,745);
+  textFont(boldFont);
+  textSize(20);
+  text("Design",792,768);
 }
 
 // Assigns the current slider value to its corresponding variable
