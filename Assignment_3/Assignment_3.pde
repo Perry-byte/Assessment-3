@@ -122,29 +122,42 @@ void draw() {
 
 // When the mouse is clicked, the chosen colour or design is assigned to the next available Biscuit object (this function sops when all Biscuits have been assigned each value)
 void mousePressed() {
-  println(doughCount + 1);
-  println(fillingCount + 1);
-  println(designCount + 1);
   if (doughCount < 16) {
     if (mouseOverCircle(170,400,100)) {
       biscuits[doughCount].dough = color(145,100,0,90);
+      fill(255);
+      stroke(255);
+      rect(170,240,40,30);
+      fill(0);
+      text(doughCount + 1,160,250);
       doughCount++;
-      println(doughCount);
     }
     if (mouseOverCircle(170,525,100)) {
       biscuits[doughCount].dough = color(145,100,0,200);
+      fill(255);
+      stroke(255);
+      rect(170,240,40,30);
+      fill(0);
+      text(doughCount + 1,160,250);
       doughCount++;
-      println(doughCount);
     }
     if (mouseOverCircle(170,650,100)) {
       biscuits[doughCount].dough = color(78,53,36,255);
+      fill(255);
+      stroke(255);
+      rect(170,240,40,30);
+      fill(0);
+      text(doughCount + 1,160,250);
       doughCount++;
-      println(doughCount);
     }
     if (mouseOverCircle(170,775,100)) {
       biscuits[doughCount].dough = color(random(255),random(255),random(255));
+      fill(255);
+      stroke(255);
+      rect(170,240,40,30);
+      fill(0);
+      text(doughCount + 1,160,250);
       doughCount++;
-      println(doughCount);
     }
   }
   
