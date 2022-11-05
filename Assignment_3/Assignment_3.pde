@@ -129,7 +129,11 @@ void mousePressed() {
       stroke(255);
       rect(170,240,40,30);
       fill(0);
-      text(doughCount + 1,160,250);
+      if (doughCount == 15) {
+        text("DONE",140,250);
+      } else {
+        text(doughCount + 1,160,250);
+      }
       doughCount++;
     }
     if (mouseOverCircle(170,525,100)) {
@@ -138,7 +142,11 @@ void mousePressed() {
       stroke(255);
       rect(170,240,40,30);
       fill(0);
-      text(doughCount + 1,160,250);
+      if (doughCount == 15) {
+        text("DONE",140,250);
+      } else {
+        text(doughCount + 1,160,250);
+      }
       doughCount++;
     }
     if (mouseOverCircle(170,650,100)) {
@@ -147,7 +155,11 @@ void mousePressed() {
       stroke(255);
       rect(170,240,40,30);
       fill(0);
-      text(doughCount + 1,160,250);
+      if (doughCount == 15) {
+        text("DONE",140,250);
+      } else {
+        text(doughCount + 1,160,250);
+      }
       doughCount++;
     }
     if (mouseOverCircle(170,775,100)) {
@@ -156,7 +168,11 @@ void mousePressed() {
       stroke(255);
       rect(170,240,40,30);
       fill(0);
-      text(doughCount + 1,160,250);
+      if (doughCount == 15) {
+        text("DONE",140,250);
+      } else {
+        text(doughCount + 1,160,250);
+      }
       doughCount++;
     }
   }
@@ -164,28 +180,68 @@ void mousePressed() {
   if (fillingCount < 16) {
     if (mouseOverCircle(500,375,75)) {
       biscuits[fillingCount].filling = color(166,10,61);
+      fill(255);
+      stroke(255);
+      rect(500,235,40,30);
+      fill(0);
+      if (fillingCount == 15) {
+        text("DONE",460,250);
+      } else {
+        text(fillingCount + 1,490,250);
+      }
       fillingCount++;
-      println(fillingCount);
     }
     if (mouseOverCircle(500,480,75)) {
       biscuits[fillingCount].filling = color(224,112,124);
+      fill(255);
+      stroke(255);
+      rect(500,235,40,30);
+      fill(0);
+      if (fillingCount == 15) {
+        text("DONE",460,250);
+      } else {
+        text(fillingCount + 1,490,250);
+      }
       fillingCount++;
-      println(fillingCount);
     }
     if (mouseOverCircle(500,585,75)) {
       biscuits[fillingCount].filling = color(130,163,255);
+      fill(255);
+      stroke(255);
+      rect(500,235,40,30);
+      fill(0);
+      if (fillingCount == 15) {
+        text("DONE",460,250);
+      } else {
+        text(fillingCount + 1,490,250);
+      }
       fillingCount++;
-      println(fillingCount);
     }
     if (mouseOverCircle(500,690,75)) {
       biscuits[fillingCount].filling = color(237,139,0);
+      fill(255);
+      stroke(255);
+      rect(500,235,40,30);
+      fill(0);
+      if (fillingCount == 15) {
+        text("DONE",460,250);
+      } else {
+        text(fillingCount + 1,490,250);
+      }
       fillingCount++;
-      println(fillingCount);
     }
     if (mouseOverCircle(500,795,75)) {
       biscuits[fillingCount].filling = color(random(255),random(255),random(255));
+      fill(255);
+      stroke(255);
+      rect(500,235,40,30);
+      fill(0);
+      if (fillingCount == 15) {
+        text("DONE",460,250);
+      } else {
+        text(fillingCount + 1,490,250);
+      }
       fillingCount++;
-      println(fillingCount);
     }
   }
   
