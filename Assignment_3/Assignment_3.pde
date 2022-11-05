@@ -265,7 +265,7 @@ void mousePressed() {
   }
 }
 
-// When a key is pressed, it redraws the background with the completed array of Biscuit objects shown on the screen
+// When a key is pressed, an error message appears if not enough inputs have been given or it redraws the background with the completed array of Biscuit objects shown on the screen
 void keyPressed() {
   if (doughCount == 16 && fillingCount == 16 && designCount == 16) {
     background(255,0,60);
