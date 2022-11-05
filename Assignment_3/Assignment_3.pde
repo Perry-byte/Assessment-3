@@ -185,7 +185,7 @@ void mousePressed() {
       rect(500,235,40,30);
       fill(0);
       if (fillingCount == 15) {
-        text("DONE",460,250);
+        text("DONE",470,250);
       } else {
         text(fillingCount + 1,490,250);
       }
@@ -198,7 +198,7 @@ void mousePressed() {
       rect(500,235,40,30);
       fill(0);
       if (fillingCount == 15) {
-        text("DONE",460,250);
+        text("DONE",470,250);
       } else {
         text(fillingCount + 1,490,250);
       }
@@ -211,7 +211,7 @@ void mousePressed() {
       rect(500,235,40,30);
       fill(0);
       if (fillingCount == 15) {
-        text("DONE",460,250);
+        text("DONE",470,250);
       } else {
         text(fillingCount + 1,490,250);
       }
@@ -224,7 +224,7 @@ void mousePressed() {
       rect(500,235,40,30);
       fill(0);
       if (fillingCount == 15) {
-        text("DONE",460,250);
+        text("DONE",470,250);
       } else {
         text(fillingCount + 1,490,250);
       }
@@ -237,7 +237,7 @@ void mousePressed() {
       rect(500,235,40,30);
       fill(0);
       if (fillingCount == 15) {
-        text("DONE",460,250);
+        text("DONE",470,250);
       } else {
         text(fillingCount + 1,490,250);
       }
@@ -250,10 +250,16 @@ void mousePressed() {
       biscuits[designCount].limbs = limbs;
       biscuits[designCount].innerRadius = innerRadius;
       biscuits[designCount].outerRadii = outerRadius;
+      fill(255);
+      stroke(255);
+      rect(820,235,40,30);
+      fill(0);
+      if (designCount == 15) {
+        text("DONE",800,250);
+      } else {
+        text(designCount + 1,810,250);
+      }
       designCount++;
-      println(limbs);
-      println(innerRadius);
-      println(outerRadius);
     }
   }
 }
