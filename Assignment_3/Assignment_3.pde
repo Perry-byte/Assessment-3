@@ -103,14 +103,20 @@ void setup() {
   
   // Draws the Confirm Design button that assigns the current design parameters to the next Biscuit object
   fill(0,255,0,200);
-  circle(820,750,100);
+  circle(870,750,100);
+  fill(255);
+  circle(760,750,100);
+  fill(0);
+  textFont(normalFont);
+  textSize(25);
+  text("Random",720,755);
   fill(21,71,52);
   textFont(boldFont);
   textSize(20);
-  text("Confirm",787,745);
+  text("Confirm",837,745);
   textFont(boldFont);
   textSize(20);
-  text("Design",792,768);
+  text("Design",842,768);
 }
 
 // Assigns the current slider value to its corresponding variable
@@ -260,7 +266,22 @@ void mousePressed() {
   }
   
   if (designCount < 16) {
-    if (mouseOverCircle(820,750,100)) {
+    if (mouseOverCircle(760,750,100)) {
+      biscuits[designCount].limbs = (int)random(3,25);
+      biscuits[designCount].innerRadius = (int)random(3,70);
+      biscuits[designCount].outerRadii = (int)random(3,70);
+      fill(255);
+      stroke(255);
+      rect(820,235,40,30);
+      fill(0);
+      if (designCount == 15) {
+        text("DONE",800,250);
+      } else {
+        text(designCount + 1,810,250);
+      }
+      designCount++;
+    }
+    if (mouseOverCircle(870,750,100)) {
       biscuits[designCount].limbs = limbs;
       biscuits[designCount].innerRadius = innerRadius;
       biscuits[designCount].outerRadii = outerRadius;
