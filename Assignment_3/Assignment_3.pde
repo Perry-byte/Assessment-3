@@ -122,6 +122,7 @@ void draw() {
 
 // When the mouse is clicked, the chosen colour or design is assigned to the next available Biscuit object (this function sops when all Biscuits have been assigned each value)
 void mousePressed() {
+  
   if (doughCount < 16) {
     if (mouseOverCircle(170,400,100)) {
       biscuits[doughCount].dough = color(145,100,0,90);
@@ -266,23 +267,33 @@ void mousePressed() {
 
 // When a key is pressed, it redraws the background with the completed array of Biscuit objects shown on the screen
 void keyPressed() {
-  background(255,0,60);
-  fill(255);
-  rectMode(CENTER);
-  rect(500,450,900,900);
-  cp5.hide();
-  int rows = 4;
-  int cols = 4;
-  translate(215,115);
-  float outerRadius = 750.0/cols;
-   for (int i=0; i<rows; i++) {
-     for (int j=0; j<cols; j++) {
-       pushMatrix();
-       translate(outerRadius*j, outerRadius*i);
-       biscuits[i * 4 + j].show();
-       popMatrix();
-     }
-   }
+  if (doughCount == 16 && fillingCount == 16 && designCount == 16) {
+    background(255,0,60);
+    fill(255);
+    rectMode(CENTER);
+    rect(500,450,900,900);
+    cp5.hide();
+    int rows = 4;
+    int cols = 4;
+    translate(215,115);
+    float outerRadius = 750.0/cols;
+    for (int i=0; i<rows; i++) {
+      for (int j=0; j<cols; j++) {
+        pushMatrix();
+        translate(outerRadius*j, outerRadius*i);
+        biscuits[i * 4 + j].show();
+        popMatrix();
+      }
+    }
+  } else {
+    fill(255);
+    stroke(0);
+    rect(325,390,150,50);
+    rect(630,390,150,50);
+    fill(0);
+    text("16 of each",270,400);
+    text("16 of each",575,400);
+  }
 }
 
 // Method that detects when a button is pressed
