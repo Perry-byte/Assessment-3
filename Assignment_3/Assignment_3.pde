@@ -13,11 +13,13 @@ int designCount;
 PFont fancyFont;
 PFont normalFont;
 PFont boldFont;
+boolean keyPress;
 
 void setup() {
   // Draw the start screen and initialise the array of Biscuit objects and the number of Biscuit objects
   background(255);
   size(1000,900);
+  keyPress = false;
   fancyFont = createFont("Menuetto.ttf", 128);
   normalFont = createFont("calibril.ttf", 25);
   boldFont = createFont("calibrib.ttf", 25);
@@ -136,12 +138,16 @@ void setOuterRadius(int outerRadius)
 }
 
 void draw() {
-
+  if (doughCount == 16 && fillingCount == 16 && designCount == 16 && keyPress == false) {
+    textFont(boldFont);
+    textSize(30);
+    text("Press Any Key",250,570);
+    text("To Continue",260,600);
+  }
 }
 
 // When the mouse is clicked, the chosen colour or design is assigned to the next available Biscuit object (this function sops when all Biscuits have been assigned each value)
 void mousePressed() {
-  
   if (doughCount < 16) {
     if (mouseOverCircle(170,400,100)) {
       biscuits[doughCount].dough = color(145,100,0,90);
@@ -302,6 +308,7 @@ void mousePressed() {
 // When a key is pressed, an error message appears if not enough inputs have been given or it redraws the background with the completed array of Biscuit objects shown on the screen
 void keyPressed() {
   if (doughCount == 16 && fillingCount == 16 && designCount == 16) {
+    keyPress = true;
     background(255,0,60);
     fill(255);
     rectMode(CENTER);
