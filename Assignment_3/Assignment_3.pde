@@ -137,6 +137,7 @@ void setOuterRadius(int outerRadius)
   this.outerRadius = outerRadius;
 }
 
+// Creates the Completion Message to Move to the Next Step
 void draw() {
   if (doughCount == 16 && fillingCount == 16 && designCount == 16 && keyPress == false) {
     textFont(boldFont);
