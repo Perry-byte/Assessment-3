@@ -16,10 +16,16 @@ PFont boldFont;
 boolean keyPress;
 
 void setup() {
-  // Draw the start screen and initialise the array of Biscuit objects and the number of Biscuit objects
-  background(255);
   size(1000,900);
+  startScreen();
+}
+
+void startScreen() {
+  // Draw the start screen and initialise the array of Biscuit objects and the number of Biscuit objects
   keyPress = false;
+  doughCount = 0;
+  fillingCount = 0;
+  designCount = 0;
   fancyFont = createFont("Menuetto.ttf", 128);
   normalFont = createFont("calibril.ttf", 25);
   boldFont = createFont("calibrib.ttf", 25);
@@ -28,9 +34,10 @@ void setup() {
   for (int i = 0; i < biscuits.length; i++) {
     biscuits[i] = new Biscuit();
   }
-  doughCount = 0;
   background(255,0,60);
   rectMode(CENTER);
+  stroke(0);
+  fill(255);
   rect(500,450,900,900);
   
   // Write the heading and sub-heading of the start screen
@@ -45,18 +52,23 @@ void setup() {
   textSize(55);
   text("Dough",115,300);
   
+  stroke(0);
   fill(145,100,0,90);
   circle(170,400,100.0);
   
+  stroke(0);
   fill(145,100,0,200);
   circle(170,525,100.0);
   
+  stroke(0);
   fill(78,53,36,255);
   circle(170,650,100.0);
   
+  stroke(0);
   fill(255);
   circle(170,775,100.0);
   
+  stroke(0);
   fill(0);
   textFont(normalFont);
   textSize(25);
@@ -67,21 +79,27 @@ void setup() {
   textSize(55);
   text("Filling",450,300);
   
+  stroke(0);
   fill(166,10,61);
   circle(500,375,75);
   
+  stroke(0);
   fill(224,112,124);
   circle(500,480,75);
   
+  stroke(0);
   fill(130,163,255);
   circle(500,585,75);
   
+  stroke(0);
   fill(237,139,0);
   circle(500,690,75);
   
+  stroke(0);
   fill(255);
   circle(500,795,75);
   
+  stroke(0);
   fill(0);
   textFont(normalFont);
   textSize(20);
@@ -106,6 +124,8 @@ void setup() {
   // Draws the Confirm Design button that assigns the current design parameters to the next Biscuit object
   fill(0,255,0,200);
   circle(870,750,100);
+  
+  stroke(0);
   fill(255);
   circle(760,750,100);
   fill(0);
@@ -142,7 +162,7 @@ void draw() {
   if (doughCount == 16 && fillingCount == 16 && designCount == 16 && keyPress == false) {
     textFont(boldFont);
     textSize(30);
-    text("Press Any Key",250,570);
+    text("Press TAB",260,570);
     text("To Continue",260,600);
   }
 }
@@ -309,28 +329,43 @@ void mousePressed() {
 // When a key is pressed, an error message appears if not enough inputs have been given or it redraws the background with the completed array of Biscuit objects shown on the screen
 void keyPressed() {
   if (doughCount == 16 && fillingCount == 16 && designCount == 16) {
-    keyPress = true;
-    background(255,0,60);
-    fill(255);
-    rectMode(CENTER);
-    rect(500,450,900,900);
-    cp5.hide();
-    int rows = 4;
-    int cols = 4;
-    translate(215,115);
-    float outerRadius = 750.0/cols;
-    for (int i=0; i<rows; i++) {
-      for (int j=0; j<cols; j++) {
-        pushMatrix();
-        translate(outerRadius*j, outerRadius*i);
-        biscuits[i * 4 + j].show();
-        popMatrix();
-      }
+    if (keyCode == ENTER && keyPress == true) {
+      background(255);
+      startScreen();
     }
-    fill(0);
-    textFont(fancyFont);
-    textSize(70);
-    text("Here are your biscuits",50,730);
+    if (keyCode == TAB) {
+      keyPress = true;
+      background(255,0,60);
+      fill(255);
+      rectMode(CENTER);
+      rect(500,450,900,900);
+      cp5.hide();
+      int rows = 4;
+      int cols = 4;
+      translate(215,115);
+      float outerRadius = 750.0/cols;
+      for (int i=0; i<rows; i++) {
+        for (int j=0; j<cols; j++) {
+          pushMatrix();
+          translate(outerRadius*j, outerRadius*i);
+          biscuits[i * 4 + j].show();
+          popMatrix();
+        }
+      }
+      fill(0);
+      textFont(fancyFont);
+      textSize(70);
+      text("Here are your biscuits",50,730);
+      
+      stroke(0);
+      fill(255);
+      rect(660,685,120,55);
+      fill(0);
+      textFont(normalFont);
+      textSize(25);
+      text("Press Enter",605,680);
+      text("to Restart",610,705);
+      }
   } else {
     fill(255);
     stroke(0);
