@@ -336,6 +336,7 @@ void keyPressed() {
     if (keyCode == TAB) {
       keyPress = true;
       background(255,0,60);
+      stroke(0);
       fill(255);
       rectMode(CENTER);
       rect(500,450,900,900);
